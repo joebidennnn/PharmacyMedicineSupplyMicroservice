@@ -35,6 +35,11 @@ namespace PharmacyMedicineSupplyMicroservice.Services
                         int indSupply = (medicine.DemandCount) / pharmacyList.Count;
                         foreach (var i in pharmacyList)
                         {
+                            if (indSupply == 0)
+                            {
+                                pharmacySupply.Add(new PharmacyMedicineSupply { MedicineName = medicine.Medicine, PharmacyName = i.pharmacyName, SupplyCount = indSupply });
+                                break;
+                            }
                             pharmacySupply.Add(new PharmacyMedicineSupply { MedicineName = medicine.Medicine, PharmacyName = i.pharmacyName, SupplyCount = indSupply });
                         }
                         if (medicine.DemandCount > indSupply * pharmacyList.Count)
