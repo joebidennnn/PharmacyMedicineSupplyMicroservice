@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  pharmacymedicinesupplymicroservice:
+    image: ${DOCKER_REGISTRY-}pharmacymedicinesupplymicroservice
+    build:
+      context: .
+      dockerfile: PharmacyMedicineSupplyMicroservice/Dockerfile

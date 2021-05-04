@@ -16,7 +16,7 @@ namespace PharmacyMedicineSupplyMicroservice.Services
         {
             var client = new HttpClient
             {
-                BaseAddress = new Uri("https://localhost:44395/api/MedicineStockInformation")
+                BaseAddress = new Uri("https://medicinestock.azurewebsites.net/api/MedicineStockInformation")
             };
             var response = await client.GetAsync("MedicineStockInformation");
             if (!response.IsSuccessStatusCode)
